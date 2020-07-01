@@ -1,37 +1,41 @@
-$(document).ready(() => {
-  // code goes in here
+var map, infoWindow;
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: -34.397, lng: 150.644 },
+    zoom: 6,
+  });
+  infoWindow = new google.maps.InfoWindow();
 
-  //   get latitude and longitude from document obj
-  var userLat = 420;
-  var userLng = 666;
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
 
-  var x = document.getElementById("demo");
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-      x.innerHTML = "Geolocation is not supported by this browser.";
-    }
+        infoWindow.setPosition(pos);
+        infoWindow.setContent("Location found.");
+        infoWindow.open(map);
+        map.setCenter(pos);
+      },
+      function () {
+        handleLocationError(true, infoWindow, map.getCenter());
+      }
+    );
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
   }
+}
 
-  function showPosition(position) {
-    x.innerHTML =
-      "Latitude: " +
-      position.coords.latitude +
-      "<br>Longitude: " +
-      position.coords.longitude;
-  }
-
-  getLocation();
-
-  console.log($(document));
-
-  var map;
-  function initMap() {
-    map = new google.maps.Map($("#map"), {
-      center: { lat: userLat, lng: userLng },
-      zoom: 8,
-    });
-  }
-  initMap();
-});
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(
+    browserHasGeolocation
+      ? "Error: The Geolocation service failed."
+      : "Error: Your browser doesn't support geolocation."
+  );
+  infoWindow.open(map);
+}

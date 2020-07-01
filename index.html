@@ -1,31 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
-
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCk4IPU5RSTKSIHZc3GGKoZVYuPX0akMt0&callback=initMap&libraries=&v=weekly"
-            defer></script>
-    <!-- Compressed CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-      integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I="
-      crossorigin="anonymous"
-    />
-
-    <!-- Compressed JavaScript -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/js/foundation.min.js"
-      integrity="sha256-pRF3zifJRA9jXGv++b06qwtSqX1byFQOLjqa2PTEb2o="
-      crossorigin="anonymous"
-
-    ></script>
+    <title>Geolocation</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <meta charset="utf-8" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-  <body></body>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="script.js"></script>
+  <body>
+    <div id="map"></div>
+
+    <script
+      async
+      defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCk4IPU5RSTKSIHZc3GGKoZVYuPX0akMt0&callback=initMap"
+    ></script>
+  </body>
 </html>
