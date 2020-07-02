@@ -73,7 +73,25 @@ $(document).ready(function () {
       url: queryURL,
       method: "GET",
     }).then((response) => {
-      console.log(response);
+      console.log(response.routes);
+      var routes = response.routes;
+      var routenum = 0;
+      routes.forEach((routeinfo) => {
+        // create a div for each route
+        var routebox = $("div");
+        routebox.attr("id", routenum);
+        // lead with the routenum
+        console.log("Route Number:" + routenum);
+        routenum++;
+        // then, each route is iterated across to log the contents of each pair
+        // a line is gonna be created to contain it, which will then be appended to the div
+        jQuery.each(routeinfo, function (key, value) {
+          console.log(key + ": " + value);
+          var keydiv = $("span");
+          keydiv.text(key + ": " + value);
+        });
+      });
+
       // response is an object containing an array named routes
     });
   });
