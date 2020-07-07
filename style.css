@@ -7,9 +7,15 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: grey;
+  background-image: url("https://www.wboy.com/wp-content/uploads/sites/43/2019/09/newrivergorge_shutterstock.jpg?w=1920&h=1080&crop=1");
 }
 
 .logo {
   height: 200px;
+}
+
+h3 {
+  text-align: center;
+  color: white;
+  font-size: small;
 }
