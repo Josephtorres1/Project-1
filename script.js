@@ -5,8 +5,8 @@ $(document).ready(function () {
   var map, infoWindow;
   function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
-      center: { lat: -34.397, lng: 150.644 },
-      zoom: 6,
+      center: { lat: 39.833, lng: -98.583 },
+      zoom: 12,
     });
     infoWindow = new google.maps.InfoWindow();
 
@@ -24,10 +24,16 @@ $(document).ready(function () {
 
           console.log(userLat, userLong);
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("Location found.");
-          infoWindow.open(map);
           map.setCenter(pos);
+
+          var marker = new google.maps.Marker({
+            position: pos,
+            map: map,
+            title: "User Position",
+            icon: {
+              url: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            },
+          });
         },
         function () {
           handleLocationError(true, infoWindow, map.getCenter());
@@ -77,9 +83,6 @@ $(document).ready(function () {
       var routes = response.routes;
       var routenum = 0;
       routes.forEach((routeinfo) => {
-        // create a div for each route
-        var routebox = $("div");
-        routebox.attr("id", routenum);
         // lead with the routenum
         console.log("Route Number:" + routenum);
         routenum++;
@@ -87,14 +90,24 @@ $(document).ready(function () {
         // a line is gonna be created to contain it, which will then be appended to the div
         jQuery.each(routeinfo, function (key, value) {
           console.log(key + ": " + value);
-          var keydiv = $("span");
-          keydiv.text(key + ": " + value);
+          var currLat = routeinfo.latitude;
+          var currLon = routeinfo.longitude;
+          newrouteMarker(currLat, currLon, routeinfo.name);
         });
       });
-
-      // response is an object containing an array named routes
     });
   });
+
+  function newrouteMarker(latitude, longitude, name) {
+    var marker = new google.maps.Marker({
+      position: { lat: latitude, lng: longitude },
+      map: map,
+      title: name,
+      icon: {
+        url: "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
+      },
+    });
+  }
 
   // key - Your private key
 
