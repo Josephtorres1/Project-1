@@ -19,3 +19,17 @@ h3 {
   color: white;
   font-size: small;
 }
+
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #123247;
+}
+
+.navItem {
+  color: white;
+  border: 1px solid #f0864a;
+}
