@@ -26,9 +26,19 @@ h3 {
   display: flex;
   justify-content: space-around;
   background-color: #123247;
+  align-items: center;
 }
 
 .navItem {
   color: white;
   border: 1px solid #f0864a;
+}
+
+.navinput {
+  height: 51px;
+  color: #123247;
+}
+
+#dumbbutton {
+  height: 51px;
 }
