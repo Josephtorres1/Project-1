@@ -57,12 +57,21 @@ $(document).ready(function () {
 
   function buildQueryURL() {
     // this builds the queryURL for the mountain API
+    var maxDist = $("#maxDist").val();
+    var minDiff = $("#minDiff").val();
+    var maxDiff = $("#maxDiff").val();
     var newqueryURL =
       "https://www.mountainproject.com/data/get-routes-for-lat-lon?lat=" +
       userLat +
       "&lon=" +
       userLong +
-      "&maxDistance=50&minDiff=5.6&maxDiff=5.15&key=200818976-5e848b47163d500302756d60bc66af43";
+      "&maxDistance=" +
+      maxDist +
+      "&minDiff=" +
+      minDiff +
+      "&maxDiff=" +
+      maxDiff +
+      "&key=200818976-5e848b47163d500302756d60bc66af43";
 
     return newqueryURL;
   }
@@ -86,13 +95,15 @@ $(document).ready(function () {
         // lead with the routenum
         console.log("Route Number:" + routenum);
         routenum++;
+        var currLat = routeinfo.latitude;
+        var currLon = routeinfo.longitude;
+        newrouteMarker(currLat, currLon, routeinfo.name);
+        //
         // then, each route is iterated across to log the contents of each pair
         // a line is gonna be created to contain it, which will then be appended to the div
+        //
         jQuery.each(routeinfo, function (key, value) {
           console.log(key + ": " + value);
-          var currLat = routeinfo.latitude;
-          var currLon = routeinfo.longitude;
-          newrouteMarker(currLat, currLon, routeinfo.name);
         });
       });
     });

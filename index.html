@@ -21,8 +21,16 @@
     />
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
-
   <body>
+    <div class="row">
+      <div class="medium-4 columns">
+        <img class="logo" src="assets/logo1.png" alt="logo" />
+      </div>
+      <br />
+    </div>
+
+    <br />
+
     <ul class="vertical medium-horizontal menu">
       <label for="maxDist" class="navItem">Maximum distance:</label>
       <input
@@ -31,7 +39,7 @@
         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
         maxlength="3"
         size="3"
-        class="navItem"
+        class="navItem navinput"
       />
 
       <label for="minDiff" class="navItem">Minimum Difficulty:</label>
@@ -41,7 +49,7 @@
         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
         maxlength="5"
         size="5"
-        class="navItem"
+        class="navItem navinput"
       />
 
       <label for="maxDiff" class="navItem">Maximum Difficulty:</label>
@@ -51,7 +59,7 @@
         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
         maxlength="5"
         size="5"
-        class="navItem"
+        class="navItem navinput"
       />
 
       <button id="dumbbutton" class="navItem">Find Routes</button>
@@ -59,14 +67,6 @@
 
     <br />
 
-    <div class="row">
-      <div class="medium-4 columns">
-        <img class="logo" src="assets/logo1.png" alt="logo" />
-      </div>
-      <br />
-    </div>
-
-    <br />
     <!-- map -->
     <div class="row">
       <div class="medium-8 columns">
