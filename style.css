@@ -64,6 +64,11 @@ h3 {
   transition: all 0.25s ease;
 }
 
+#route-display {
+  height: 500px;
+  overflow-y: scroll;
+}
+
 .route-card > :last-child {
   margin-bottom: 0;
 }
@@ -88,6 +93,7 @@ h3 {
   z-index: 0;
   border-color: transparent transparent transparent #fefefe;
 }
+
 
 .route-card-name {
   margin-bottom: 0;
