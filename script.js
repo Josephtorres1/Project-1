@@ -102,6 +102,13 @@ $(document).ready(function () {
         // then, each route is iterated across to log the contents of each pair
         // a line is gonna be created to contain it, which will then be appended to the div
         //
+        createroutecard(
+          routeinfo.name,
+          routeinfo.type,
+          routeinfo.rating,
+          currLat,
+          currLon
+        );
         jQuery.each(routeinfo, function (key, value) {
           console.log(key + ": " + value);
         });
@@ -120,19 +127,30 @@ $(document).ready(function () {
     });
   }
 
-  // key - Your private key
-
-  // lat - Latitude for a given area
-
-  // lon - Longitude for a given area
-
-  // Optional Arguments:
-
-  // maxDistance - Max distance, in miles, from lat, lon. Default: 30. Max: 200.
-
-  // maxResults - Max number of routes to return. Default: 50. Max: 500.
-
-  // minDiff - Min difficulty of routes to return, e.g. 5.6 or V0.
-
-  // maxDiff - Max difficulty of routes to return, e.g. 5.10a or V2.
+  function createroutecard(name, type, rating, lat, lon) {
+    var newcard = $("<div>").addClass("route-card");
+    var cardcontent = $("<div>").addClass("route-card-content card-section");
+    var cardname = $("<p>").addClass("route-card-name");
+    var cardtype = $("<p>").addClass("route-card-type");
+    var cardrating = $("<p>").addClass("route-card-rating");
+    var cardloc = $("<p>").addClass("route-card-loc");
+    cardname.text(name);
+    cardtype.text(type);
+    cardrating.text(rating);
+    cardloc.text(lat + ", " + lon);
+    console.log("made routecard");
+    cardcontent.append([cardname, cardtype, cardrating, cardloc]);
+    newcard.append(cardcontent);
+    $("#route-display").append(newcard);
+  }
 });
+
+// // FUNCTION NEEDS TO CREATE THIS
+// <div class="route-card">
+//   <div class="route-card-content card-section">
+//     <p class="route-card-name">Abominable Snowman</p>
+//     <p class="route-card-type">Yeti Web Designer</p>
+//     <p class="route-card-rating">5.5</p>
+//     <p class="route-card-loc"> 0.0, 0.0</p>
+//   </div>
+// </div>;
