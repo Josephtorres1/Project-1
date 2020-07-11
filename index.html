@@ -23,49 +23,44 @@
   </head>
   <body>
     <div class="row">
-      <div class="medium-4 columns">
-        <img class="logo" src="assets/logo1.png" alt="logo" />
-      </div>
-      <br />
+      <img class="logo" src="assets/logo1.png" alt="logo" />
     </div>
 
-    <br />
+    <div class="menudiv">
+      <ul class="menu">
+        <label for="maxDist" class="navItem">Maximum distance:</label>
+        <input
+          type="number"
+          id="maxDist"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="3"
+          size="3"
+          class="navItem navinput"
+        />
 
-    <ul class="vertical medium-horizontal menu">
-      <label for="maxDist" class="navItem">Maximum distance:</label>
-      <input
-        type="number"
-        id="maxDist"
-        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        maxlength="3"
-        size="3"
-        class="navItem navinput"
-      />
+        <label for="minDiff" class="navItem">Minimum Difficulty:</label>
+        <input
+          type="number"
+          id="minDiff"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="5"
+          size="5"
+          class="navItem navinput"
+        />
 
-      <label for="minDiff" class="navItem">Minimum Difficulty:</label>
-      <input
-        type="number"
-        id="minDiff"
-        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        maxlength="5"
-        size="5"
-        class="navItem navinput"
-      />
+        <label for="maxDiff" class="navItem">Maximum Difficulty:</label>
+        <input
+          type="number"
+          id="maxDiff"
+          oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+          maxlength="5"
+          size="5"
+          class="navItem navinput"
+        />
 
-      <label for="maxDiff" class="navItem">Maximum Difficulty:</label>
-      <input
-        type="number"
-        id="maxDiff"
-        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-        maxlength="5"
-        size="5"
-        class="navItem navinput"
-      />
-
-      <button id="dumbbutton" class="navItem">Find Routes</button>
-    </ul>
-
-    <br />
+        <button id="dumbbutton" class="navItem">Find Routes</button>
+      </ul>
+    </div>
 
     <!-- map -->
     <div class="row">
