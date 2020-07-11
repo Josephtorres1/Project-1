@@ -73,6 +73,10 @@ h3 {
   transition: all 0.25s ease;
 }
 
+p {
+  margin-bottom: 5px;
+}
+
 #route-display {
   height: 500px;
   overflow-y: scroll;

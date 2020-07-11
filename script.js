@@ -140,9 +140,8 @@ $(document).ready(function () {
     var cardloc = $("<p>").addClass("route-card-loc");
     cardname.text(name);
     cardtype.text(type);
-    cardrating.text(rating);
-    cardloc.text(lat + ", " + lon);
-    console.log("made routecard");
+    cardrating.text("Difficulty: " + rating);
+    cardloc.text("Lat: " + lat + " Lon: " + lon);
     cardcontent.append([cardname, cardtype, cardrating, cardloc]);
     newcard.append(cardcontent);
     $("#route-display").append(newcard);
