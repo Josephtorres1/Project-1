@@ -2,6 +2,7 @@ $(document).ready(function () {
   var userLat;
   var userLong;
 
+  var markers = [];
   var map, infoWindow;
   function initMap() {
     map = new google.maps.Map(document.getElementById("map"), {
@@ -84,6 +85,8 @@ $(document).ready(function () {
 
   $("#dumbbutton").on("click", function () {
     var queryURL = buildQueryURL();
+    deleteMarkers();
+    $("#route-display").empty();
     $.ajax({
       url: queryURL,
       method: "GET",
@@ -125,6 +128,7 @@ $(document).ready(function () {
         url: "http://maps.google.com/mapfiles/ms/icons/orange-dot.png",
       },
     });
+    markers.push(marker);
   }
 
   function createroutecard(name, type, rating, lat, lon) {
@@ -143,14 +147,16 @@ $(document).ready(function () {
     newcard.append(cardcontent);
     $("#route-display").append(newcard);
   }
-});
 
-// // FUNCTION NEEDS TO CREATE THIS
-// <div class="route-card">
-//   <div class="route-card-content card-section">
-//     <p class="route-card-name">Abominable Snowman</p>
-//     <p class="route-card-type">Yeti Web Designer</p>
-//     <p class="route-card-rating">5.5</p>
-//     <p class="route-card-loc"> 0.0, 0.0</p>
-//   </div>
-// </div>;
+  // Sets the map on all markers in the array.
+  function setMapOnAll(map) {
+    for (var i = 0; i < markers.length; i++) {
+      markers[i].setMap(map);
+    }
+  }
+
+  function deleteMarkers() {
+    setMapOnAll(null);
+    markers = [];
+  }
+});
