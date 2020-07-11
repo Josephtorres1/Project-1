@@ -12,6 +12,7 @@ body {
 
 .logo {
   height: 200px;
+  margin: 10px 15px;
 }
 
 h3 {
@@ -20,13 +21,20 @@ h3 {
   font-size: small;
 }
 
-.menu {
-  top: 0;
-  width: 100%;
+.menudiv {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.menu {
+  display: inline-flex;
+  justify-content: center;
   background-color: #123247;
   align-items: center;
+  margin: auto;
+  margin-bottom: 10px;
 }
 
 .navItem {
