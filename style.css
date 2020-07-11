@@ -1,5 +1,6 @@
 #map {
   height: 500px;
+  margin-bottom: 15px;
 }
 
 html,
@@ -75,6 +76,14 @@ h3 {
 #route-display {
   height: 500px;
   overflow-y: scroll;
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+#route-display::-webkit-scrollbar {
+  display: none;
 }
 
 .route-card > :last-child {
@@ -101,7 +110,6 @@ h3 {
   z-index: 0;
   border-color: transparent transparent transparent #fefefe;
 }
-
 
 .route-card-name {
   margin-bottom: 0;
