@@ -3,17 +3,13 @@
 title: Rock Climbing
 
 Description: The user may find rock climbing areas near their location.
-This includes outdoor rock climbing spots and indoor rock climbing gyms.
+This includes outdoor rock climbing spots and in the future, indoor rock climbing gyms.
+
 
 User Story:
 
-- AS a rock climber I want to find outdoor rock climbing spots wherever
-  I am in the US so I can rock climb.
-- AS a rock climber i want to find indoor rock climbing gyms wherever
-  I am in the US so I can rock climb.
-
-AS a rock climber I want to find rock climbing stores near me.
-AS a rock climber I want to know the weather conditions for outdoor rock climbing
+- AS a rock climber I want to find outdoor rock climbing spots
+  near my location so I can rock climb.
 
 API'S:
 Rock Climbing API- https://www.mountainproject.com/data
@@ -25,3 +21,5 @@ Google Maps API-
 req'd arguments (potentially)
 API key: AIzaSyCk4IPU5RSTKSIHZc3GGKoZVYuPX0akMt0
 email (if necessary): tj.okgo.scott@gmail.com
+
+Link the our website: https://josephtorres1.github.io/Project-1/
