@@ -27,6 +27,8 @@ h3 {
   justify-content: center;
   width: 100%;
   padding: 0 10px;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .menu {
@@ -38,6 +40,7 @@ h3 {
   margin-bottom: 10px;
 }
 
+.input-group,
 .navItem {
   color: white;
   border: 1px solid #f0864a;
@@ -50,6 +53,7 @@ h3 {
 
 #dumbbutton {
   height: 51px;
+  max-width: 120px;
 }
 
 .route-card {

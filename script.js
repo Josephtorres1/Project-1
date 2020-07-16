@@ -110,7 +110,8 @@ $(document).ready(function () {
           routeinfo.type,
           routeinfo.rating,
           currLat,
-          currLon
+          currLon,
+          routeinfo.url
         );
         jQuery.each(routeinfo, function (key, value) {
           console.log(key + ": " + value);
@@ -131,7 +132,8 @@ $(document).ready(function () {
     markers.push(marker);
   }
 
-  function createroutecard(name, type, rating, lat, lon) {
+  function createroutecard(name, type, rating, lat, lon, url) {
+    var clickability = $("<a>").attr({ href: url, target: "_blank" });
     var newcard = $("<div>").addClass("route-card");
     var cardcontent = $("<div>").addClass("route-card-content card-section");
     var cardname = $("<p>").addClass("route-card-name");
@@ -144,7 +146,8 @@ $(document).ready(function () {
     cardloc.text("Lat: " + lat + " Lon: " + lon);
     cardcontent.append([cardname, cardtype, cardrating, cardloc]);
     newcard.append(cardcontent);
-    $("#route-display").append(newcard);
+    clickability.append(newcard);
+    $("#route-display").append(clickability);
   }
 
   // Sets the map on all markers in the array.
