@@ -31,24 +31,10 @@ h3 {
   white-space: nowrap;
 }
 
-.menu {
-  display: inline-flex;
-  justify-content: center;
-  background-color: #123247;
-  align-items: center;
-  margin: auto;
-  margin-bottom: 10px;
-}
-
 .input-group,
 .navItem {
   color: white;
   border: 1px solid #f0864a;
-}
-
-.navinput {
-  height: 51px;
-  color: #123247;
 }
 
 #dumbbutton {
